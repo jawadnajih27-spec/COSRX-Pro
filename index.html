@@ -3,1470 +3,1232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COSRX – Advanced Snail 92 All In One Cream</title>
-  <meta
-    name="description"
-    content="الصفحة الرسمية لطلب COSRX Advanced Snail 92 All In One Cream في الإمارات مع شحن مجاني بالكامل والدفع عند الاستلام."
-  />
+  <title>OBSIDIAN | كريم موسين الحلزون 92%</title>
+  <meta name="description" content="الترميم الفوري والإشراقة الطبيعية للبشرة - تركيبة طبية متقدمة بتركيز 92% موسين الحلزون النقي" />
 
-  <!-- Premium Arabic font -->
+  <!-- Google Fonts: Tajawal for Arabic + DM Serif Display for logo -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
   <style>
-    /* =========================================================
-       RESET
-    ========================================================= */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body, h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
+    /* ============================================================
+       CSS VARIABLES — تعديل الألوان والخطوط من هنا
+    ============================================================ */
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --off-white:  #f4f1ec;
+      --stone:      #e8e3d8;
+      --warm-gray:  #9b9189;
+      --charcoal:   #2a2520;
+      --dark:       #1a1512;
+      --gold:       #c9a84c;
+      --gold-light: #e8cc80;
+      --gold-dark:  #a07828;
+      --green:      #3d7a5e;
+      --green-light:#4f9a76;
+      --accent:     #8b4a3c;
+      --shadow-sm:  0 2px 12px rgba(42,37,32,0.06);
+      --shadow-md:  0 8px 40px rgba(42,37,32,0.10);
+      --shadow-lg:  0 20px 80px rgba(42,37,32,0.15);
+      --radius:     16px;
+      --radius-sm:  8px;
+      --font-main:  'Tajawal', sans-serif;
+      --font-display: 'DM Serif Display', serif;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
     img { max-width: 100%; display: block; }
-    button, input, select { font: inherit; }
-    a { color: inherit; text-decoration: none; }
-
-    /* =========================================================
-       DESIGN TOKENS — COSRX Minimalist Luxury
-    ========================================================= */
-    :root{
-      --white:#ffffff;
-      --soft:#f4f5f7;
-      --soft-2:#fafafa;
-      --ink:#000000;
-      --ink-soft:#1d1d1f;
-      --muted:#727680;
-      --line:#e5e7eb;
-      --line-strong:#d9dde3;
-      --success:#0f766e;
-      --success-bg:#ecfdf5;
-      --danger:#b42318;
-      --danger-bg:#fff5f5;
-      --radius-sm:14px;
-      --radius-md:20px;
-      --radius-lg:28px;
-      --radius-xl:36px;
-      --shadow-1:0 6px 24px rgba(0,0,0,.05);
-      --shadow-2:0 14px 48px rgba(0,0,0,.09);
-      --shadow-3:0 18px 60px rgba(0,0,0,.12);
-      --container:1180px;
-    }
-
-    body{
-      font-family:"Cairo", sans-serif;
-      background:var(--white);
-      color:var(--ink-soft);
-      direction:rtl;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      overflow-x:hidden;
-    }
-
-    .container{
-      width:min(100% - 32px, var(--container));
-      margin-inline:auto;
-    }
-
-    .section{
-      padding:72px 0;
-    }
-
-    .section.soft{ background:var(--soft); }
-    .section.soft-2{ background:var(--soft-2); }
-    .section.white{ background:var(--white); }
-
-    .section-tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.85);
-      color:var(--muted);
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.06em;
-    }
-
-    .section-head{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:14px;
-      text-align:center;
-      margin-bottom:34px;
-    }
-
-    .hero-h1,
-    .section-title,
-    .order-hl{
-      font-weight:900;
-      color:var(--ink);
-      letter-spacing:-.02em;
-    }
-
-    .section-title{
-      font-size:clamp(1.7rem, 4vw, 2.5rem);
-      line-height:1.2;
-    }
-
-    .muted{
-      color:var(--muted);
-      line-height:1.9;
-    }
-
-    /* =========================================================
-       TOP BAR / NAV
-    ========================================================= */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      backdrop-filter:saturate(180%) blur(14px);
-      background:rgba(255,255,255,.88);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-
-    .topbar-inner{
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
-
-    .brand-mark{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      background:linear-gradient(145deg, #ffffff, #eef1f4);
-      border:1px solid var(--line);
-      display:grid;
-      place-items:center;
-      box-shadow:var(--shadow-1);
-      flex:0 0 auto;
-    }
-
-    .brand-mark span{
-      font-weight:900;
-      font-size:.95rem;
-      letter-spacing:.12em;
-      color:var(--ink);
-    }
-
-    .brand-copy{
-      display:flex;
-      flex-direction:column;
-      min-width:0;
-    }
-
-    .brand-name{
-      font-weight:900;
-      font-size:1rem;
-      color:var(--ink);
-      letter-spacing:.14em;
-    }
-
-    .brand-sub{
-      font-size:.74rem;
-      color:var(--muted);
-      font-weight:700;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .nav-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:9px 14px;
-      background:var(--soft-2);
-      border:1px solid var(--line);
-      border-radius:999px;
-      font-size:.8rem;
-      font-weight:800;
-      color:var(--ink-soft);
-      white-space:nowrap;
-    }
-
-    .mini-cta{
-      border:none;
-      background:var(--ink);
-      color:#fff;
-      border-radius:999px;
-      padding:11px 18px;
-      font-weight:900;
-      cursor:pointer;
-      box-shadow:0 10px 25px rgba(0,0,0,.16);
-      transition:transform .2s ease, opacity .2s ease;
-    }
-
-    .mini-cta:hover{ transform:translateY(-1px); }
-    .mini-cta:active{ transform:translateY(0); }
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-    .hero{
-      padding:36px 0 28px;
-      background:
-        radial-gradient(circle at top right, rgba(244,245,247,.9), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:34px;
-      align-items:center;
-    }
-
-    .hero-content{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap:18px;
-    }
-
-    .hero-h1{
-      font-size:clamp(2.1rem, 6vw, 4.35rem);
-      line-height:1.06;
-      max-width:12ch;
-    }
-
-    .hero-sub{
-      font-size:clamp(1rem, 2vw, 1.12rem);
-      max-width:60ch;
-      color:var(--muted);
-      line-height:1.95;
-      font-weight:600;
-    }
-
-    .hero-sub strong{
-      color:var(--ink);
-      font-weight:900;
-    }
-
-    .price-panel{
-      width:min(100%, 530px);
-      background:var(--white);
-      border:1px solid var(--line);
-      border-radius:var(--radius-lg);
-      padding:24px;
-      box-shadow:var(--shadow-2);
-    }
-
-    .price-overline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      margin-bottom:14px;
-    }
-
-    .price-chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 14px;
-      font-size:.8rem;
-      font-weight:800;
-      color:var(--ink-soft);
-    }
-
-    .price-old{
-      color:#8b9099;
-      font-size:1rem;
-      font-weight:700;
-      text-decoration:line-through;
-      text-decoration-thickness:2px;
-      text-underline-offset:4px;
-      margin-bottom:8px;
-    }
-
-    .price-new{
-      color:var(--ink);
-      font-weight:900;
-      font-size:clamp(2rem, 5vw, 3.2rem);
-      line-height:1.05;
-      margin-bottom:10px;
-    }
-
-    .price-note{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      color:var(--muted);
-      font-size:.98rem;
-      font-weight:700;
-      line-height:1.8;
-      margin-bottom:18px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      align-items:center;
-    }
-
-    .cta-btn,
-    .ghost-btn,
-    .submit-btn,
-    .modal-close{
-      border:none;
-      cursor:pointer;
-      font-family:"Cairo", sans-serif;
-      transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease, background .2s ease;
-    }
-
-    .cta-btn,
-    .submit-btn,
-    .modal-close{
-      background:var(--ink);
-      color:#fff;
-      font-weight:900;
-      box-shadow:0 14px 36px rgba(0,0,0,.16);
-    }
-
-    .cta-btn{
-      min-height:60px;
-      border-radius:18px;
-      padding:0 24px;
-      font-size:1.02rem;
-    }
-
-    .ghost-btn{
-      min-height:60px;
-      border-radius:18px;
-      padding:0 22px;
-      background:#fff;
-      color:var(--ink);
-      border:1.5px solid var(--line-strong);
-      font-weight:900;
-    }
-
-    .cta-btn:hover,
-    .ghost-btn:hover,
-    .submit-btn:hover,
-    .modal-close:hover{ transform:translateY(-1px); }
-
-    .cta-btn:active,
-    .ghost-btn:active,
-    .submit-btn:active,
-    .modal-close:active{ transform:translateY(0); }
-
-    .hero-visual{
-      position:relative;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:560px;
-    }
-
-    .orb{
-      position:absolute;
-      inset:auto;
-      width:min(90vw, 520px);
-      aspect-ratio:1/1;
-      border-radius:50%;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.98) 0%, rgba(244,245,247,.95) 55%, rgba(231,235,240,.7) 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.9),
-        0 35px 80px rgba(0,0,0,.09);
-    }
-
-    .product-stage{
-      position:relative;
-      z-index:2;
-      width:min(100%, 460px);
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(255,255,255,.8);
-      border-radius:32px;
-      padding:38px 30px 24px;
-      backdrop-filter:blur(6px);
-      box-shadow:var(--shadow-3);
-    }
-
-    .product-stage img{
-      width:min(100%, 320px);
-      margin:0 auto;
-      filter:drop-shadow(0 28px 35px rgba(0,0,0,.18));
-    }
-
-    .img-placeholder{
-      width:250px;
-      height:250px;
-      margin:0 auto;
-      border-radius:28px;
-      background:linear-gradient(145deg, #f6f7f9, #eceff3);
-      border:1px solid var(--line);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      color:#7f8791;
-      font-size:4rem;
-    }
-
-    .visual-cards{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      z-index:3;
-    }
-
-    .float-card{
-      position:absolute;
-      background:rgba(255,255,255,.96);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow-2);
-      border-radius:20px;
-      padding:12px 14px;
-      max-width:180px;
-    }
-
-    .float-card strong{
-      display:block;
-      font-size:.9rem;
-      font-weight:900;
-      color:var(--ink);
-      margin-bottom:4px;
-    }
-
-    .float-card span{
-      display:block;
-      font-size:.8rem;
-      color:var(--muted);
-      line-height:1.6;
-      font-weight:700;
-    }
-
-    .card-a{ top:12%; right:-4%; }
-    .card-b{ bottom:14%; left:-3%; }
-    .card-c{ top:52%; right:-8%; }
-
-    /* =========================================================
-       INFO STRIP
-    ========================================================= */
-    .trust-strip{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-    }
-
-    .trust-item{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px 16px;
-      box-shadow:var(--shadow-1);
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-
-    .trust-icon{
-      flex:0 0 auto;
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      background:var(--soft);
-      border:1px solid var(--line);
-    }
-
-    .trust-item strong{
-      display:block;
-      font-size:.96rem;
-      font-weight:900;
-      color:var(--ink);
-      margin-bottom:4px;
-    }
-
-    .trust-item span{
-      display:block;
-      color:var(--muted);
-      font-size:.82rem;
-      line-height:1.7;
-      font-weight:700;
-    }
-
-    /* =========================================================
-       FEATURES
-    ========================================================= */
-    .features-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-    }
-
-    .feature-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:24px 20px;
-      box-shadow:var(--shadow-1);
-      height:100%;
-    }
-
-    .feature-icon{
-      width:52px;
-      height:52px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      background:var(--soft);
-      border:1px solid var(--line);
-      font-size:1.55rem;
-      margin-bottom:16px;
-    }
-
-    .feature-card h3{
-      font-size:1.02rem;
-      font-weight:900;
-      color:var(--ink);
-      margin-bottom:8px;
-      line-height:1.5;
-    }
-
-    .feature-card p{
-      color:var(--muted);
-      line-height:1.9;
-      font-size:.92rem;
-      font-weight:600;
-    }
-
-    /* =========================================================
-       HOW TO
-    ========================================================= */
-    .how-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-      align-items:start;
-    }
-
-    .steps{
-      display:grid;
-      gap:16px;
-    }
-
-    .step{
-      position:relative;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:24px 22px 24px 86px;
-      box-shadow:var(--shadow-1);
-      min-height:132px;
-    }
-
-    .step-bg-num{
-      position:absolute;
-      left:14px;
-      top:8px;
-      font-size:4.8rem;
-      line-height:1;
-      font-weight:900;
-      color:#ebedf0;
-      pointer-events:none;
-      user-select:none;
-    }
-
-    .step-badge{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      background:var(--ink);
-      color:#fff;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      margin-bottom:12px;
-    }
-
-    .step-text{
-      font-size:1rem;
-      font-weight:800;
-      line-height:1.85;
-      color:var(--ink);
-    }
-
-    .how-note{
-      background:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow-2);
-      height:100%;
-    }
-
-    .how-note .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:9px 14px;
-      margin-bottom:14px;
-      font-size:.8rem;
-      font-weight:900;
-      color:var(--ink);
-    }
-
-    .how-note h3{
-      font-size:1.55rem;
-      font-weight:900;
-      color:var(--ink);
-      line-height:1.35;
-      margin-bottom:12px;
-    }
-
-    .how-note p{
-      color:var(--muted);
-      line-height:1.95;
-      font-size:.96rem;
-      font-weight:700;
-      margin-bottom:16px;
-    }
-
-    .mini-list{
-      display:grid;
-      gap:10px;
-    }
-
-    .mini-list .row{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:16px;
-      background:var(--soft-2);
-      border:1px solid var(--line);
-      font-weight:800;
-      color:var(--ink-soft);
-      line-height:1.8;
-    }
-
-    /* =========================================================
-       STATS
-    ========================================================= */
-    .stats-wrap{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:32px;
-      box-shadow:var(--shadow-2);
-      overflow:hidden;
-    }
-
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-    }
-
-    .stat{
-      padding:28px 22px;
-      text-align:center;
-      background:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-    }
-
-    .stat + .stat{ border-right:1px solid var(--line); }
-
-    .stat-num{
-      color:var(--ink);
-      font-size:clamp(1.8rem, 4vw, 2.8rem);
-      line-height:1;
-      font-weight:900;
-      margin-bottom:8px;
-    }
-
-    .stat-label{
-      color:var(--muted);
-      font-weight:800;
-      font-size:.9rem;
-    }
-
-    /* =========================================================
-       ORDER SECTION
-    ========================================================= */
-    .order-shell{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:26px;
-      align-items:start;
-    }
-
-    .order-copy{
-      background:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-      border:1px solid var(--line);
-      border-radius:32px;
-      padding:28px;
-      box-shadow:var(--shadow-2);
-    }
-
-    .order-hl{
-      font-size:clamp(1.7rem, 4vw, 2.7rem);
-      line-height:1.2;
-      margin-bottom:14px;
-    }
-
-    .order-copy p{
-      color:var(--muted);
-      line-height:1.95;
-      font-size:1rem;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .bullet-list{
-      display:grid;
-      gap:10px;
-    }
-
-    .bullet{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      background:var(--soft-2);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 15px;
-      font-weight:800;
-      line-height:1.8;
-    }
-
-    .order-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:32px;
-      padding:28px;
-      box-shadow:var(--shadow-3);
-    }
-
-    .order-price{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-      border-radius:22px;
-      padding:16px 18px;
-      margin-bottom:22px;
-    }
-
-    .order-price strong{
-      color:var(--ink);
-      font-size:1.35rem;
-      font-weight:900;
-    }
-
-    .order-price span{
-      color:var(--muted);
-      font-size:.9rem;
-      font-weight:800;
-    }
-
-    .form-row{
-      display:grid;
-      gap:16px;
-    }
-
-    .field{
-      display:grid;
-      gap:8px;
-    }
-
-    .field label{
-      color:var(--ink);
-      font-size:.93rem;
-      font-weight:900;
-    }
-
-    .field input,
-    .field select{
-      width:100%;
-      min-height:56px;
-      border:2px solid var(--line-strong);
-      border-radius:16px;
-      background:#fff;
-      color:var(--ink);
-      padding:0 16px;
-      outline:none;
-      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
-    }
-
-    .field input::placeholder{ color:#a3a8b0; }
-
-    .field input:focus,
-    .field select:focus{
-      border-color:var(--ink);
-      box-shadow:0 0 0 4px rgba(0,0,0,.06);
-    }
-
-    .field input.error,
-    .field select.error{
-      border-color:var(--danger);
-      background:#fff9f8;
-      box-shadow:0 0 0 4px rgba(180,35,24,.08);
-    }
-
-    .field .hint{
-      min-height:20px;
-      color:var(--danger);
-      font-size:.82rem;
-      font-weight:800;
-    }
-
-    .submit-btn{
-      width:100%;
-      min-height:60px;
-      border-radius:18px;
-      font-size:1.02rem;
-      margin-top:2px;
-    }
-
-    .submit-btn[disabled]{
-      opacity:.7;
-      cursor:not-allowed;
-      transform:none !important;
-    }
-
-    .status-box{
-      display:none;
-      margin-top:14px;
-      border-radius:16px;
-      padding:14px 16px;
-      font-size:.92rem;
-      font-weight:800;
-      line-height:1.8;
-    }
-
-    .status-box.show{ display:block; }
-    .status-box.error{
-      color:var(--danger);
-      background:var(--danger-bg);
-      border:1px solid #f0c7c2;
-    }
-
-    .status-box.success{
-      color:var(--success);
-      background:var(--success-bg);
-      border:1px solid #cdeee6;
-    }
-
-    .trust-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:9px 14px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--ink-soft);
-      font-size:.8rem;
-      font-weight:900;
-    }
-
-    /* =========================================================
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250,248,244,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      transition: box-shadow 0.3s;
+    }
+
+    header.scrolled { box-shadow: var(--shadow-sm); }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--charcoal);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .logo-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-brand {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      color: var(--charcoal);
+    }
+
+    .logo-tagline {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(61,122,94,0.08);
+      border: 1px solid rgba(61,122,94,0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    .header-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse-dot 1.5s ease infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      padding: 120px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text { order: 1; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      height: 1px;
+      width: 30px;
+      background: var(--gold);
+    }
+
+    h1.hero-title {
+      font-family: var(--font-main);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    h1.hero-title em {
+      font-style: normal;
+      color: var(--gold-dark);
+      position: relative;
+    }
+
+    h1.hero-title em::after {
+      content: '';
+      position: absolute;
+      bottom: 2px; right: 0; left: 0;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      opacity: 0.4;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--warm-gray);
+      max-width: 460px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      background: var(--white);
+      border: 1px solid var(--stone);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 1.05rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(160,120,40,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(160,120,40,0.45);
+    }
+
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    /* ============================================================
+       PRODUCT IMAGE — sticky scroll effect target
+       ✏️ تعديل سرعة حركة الصورة: غيّر القيمة في JS عند متغير SCROLL_SPEED
+    ============================================================ */
+    .hero-image-wrap {
+      order: 2;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-glow {
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* صورة المنتج — لا خلفية، لا إطار، لا ظل داكن */
+    #product-img {
+      position: relative;
+      z-index: 1;
+      width: 420px;
+      max-width: 100%;
+      object-fit: contain;
+      /* لا background، لا border، لا box-shadow */
+      transition: transform 0.1s linear;
+      will-change: transform;
+    }
+
+    /* Placeholder إذا لم توجد الصورة بعد */
+    .product-placeholder {
+      width: 380px;
+      height: 420px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, var(--off-white), var(--stone));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--warm-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 2px dashed var(--stone);
+    }
+
+    .product-placeholder svg { width: 60px; height: 60px; opacity: 0.35; }
+
+    /* ============================================================
+       SECTION SHARED STYLES
+    ============================================================ */
+    section { padding: 100px 40px; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--warm-gray);
+      max-width: 540px;
+      line-height: 1.85;
+    }
+
+    /* ============================================================
+       SCROLL REVEAL — initial hidden states
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       FEATURES SECTION
+    ============================================================ */
+    #features { background: var(--white); }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .features-header .section-desc { margin: 0 auto; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--cream);
+      border: 1px solid var(--stone);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+      line-height: 1;
+    }
+
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 0.87rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       HOW TO USE
+    ============================================================ */
+    #how-to-use {
+      background: var(--off-white);
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .step-body {}
+    .step-title { font-size: 0.95rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .step-desc  { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.75; }
+
+    .how-note {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(61,122,94,0.07);
+      border: 1px solid rgba(61,122,94,0.18);
+      padding: 10px 18px;
+      border-radius: 100px;
+    }
+
+    .how-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .how-visual-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--stone);
+    }
+
+    .how-visual-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .how-visual-label { font-size: 0.82rem; font-weight: 700; color: var(--charcoal); }
+    .how-visual-sub   { font-size: 0.77rem; color: var(--warm-gray); }
+
+    /* ============================================================
+       OFFER / PRICE SECTION
+    ============================================================ */
+    #offer {
+      background: var(--charcoal);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #offer::before {
+      content: 'OBSIDIAN';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 12vw;
+      color: rgba(255,255,255,0.025);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .offer-inner { position: relative; z-index: 1; }
+
+    .offer-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .offer-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900;
+      margin-bottom: 40px;
+      line-height: 1.3;
+    }
+
+    .price-block {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    .price-old {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+      position: relative;
+    }
+
+    .price-current {
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .price-currency {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .price-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .offer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 22px 52px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      color: var(--dark);
+      font-family: var(--font-main);
+      font-size: 1.15rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 12px 48px rgba(201,168,76,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .offer-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(201,168,76,0.5);
+    }
+
+    /* ============================================================
+       ORDER FORM SECTION
+    ============================================================ */
+    #order {
+      background: var(--white);
+    }
+
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .order-info {}
+
+    .order-info .section-title { margin-bottom: 24px; }
+
+    .trust-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .trust-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--off-white);
+      border: 1px solid var(--stone);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Form */
+    .order-form-box {
+      background: var(--cream);
+      border: 1px solid var(--stone);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .form-group label span { color: #c0392b; margin-right: 2px; }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1.5px solid var(--stone);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+
+    .form-control::placeholder { color: #bbb; }
+
+    .form-control.error { border-color: #e74c3c; }
+
+    select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239b9189' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+      padding-left: 40px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      color: var(--white);
+      font-family: var(--font-main);
+      font-size: 1.1rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 28px rgba(61,122,94,0.3);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(61,122,94,0.4);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    /* Form messages */
+    .form-msg {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .form-msg.loading {
+      display: block;
+      background: rgba(201,168,76,0.1);
+      color: var(--gold-dark);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .form-msg.success {
+      display: block;
+      background: rgba(61,122,94,0.08);
+      color: var(--green);
+      border: 1px solid rgba(61,122,94,0.25);
+    }
+
+    .form-msg.error {
+      display: block;
+      background: rgba(231,76,60,0.07);
+      color: #c0392b;
+      border: 1px solid rgba(231,76,60,0.25);
+    }
+
+    /* ============================================================
        FOOTER
-    ========================================================= */
-    footer{
-      padding:28px 0 44px;
-      background:#fff;
-      border-top:1px solid var(--line);
+    ============================================================ */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      padding: 40px;
+      text-align: center;
     }
 
-    .footer-wrap{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
     }
 
-    .foot-brand{
-      font-weight:900;
-      color:var(--ink);
-      letter-spacing:.14em;
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 20px;
     }
 
-    .foot-copy{
-      color:var(--muted);
-      font-size:.86rem;
-      font-weight:700;
+    .footer-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
     }
 
-    /* =========================================================
-       MODAL
-    ========================================================= */
-    .modal-overlay{
-      position:fixed;
-      inset:0;
-      z-index:1200;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      background:rgba(0,0,0,.55);
-      backdrop-filter:blur(6px);
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy { font-size: 0.75rem; }
+
+    /* ============================================================
+       MODALS (Privacy / Terms)
+    ============================================================ */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,21,18,0.6);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
-    .modal-overlay.open{ display:flex; }
+    .modal-overlay.open { display: flex; }
 
-    .modal-box{
-      width:min(100%, 460px);
-      background:#fff;
-      border:1px solid rgba(255,255,255,.5);
-      border-radius:30px;
-      padding:34px 26px 26px;
-      text-align:center;
-      box-shadow:0 28px 70px rgba(0,0,0,.22);
+    .modal-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
     }
 
-    .modal-icon{
-      width:72px;
-      height:72px;
-      margin:0 auto 16px;
-      border-radius:24px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(180deg, #f4f5f7 0%, #ffffff 100%);
-      border:1px solid var(--line);
-      font-size:2rem;
+    .modal-close {
+      position: absolute;
+      top: 16px; left: 16px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--stone);
+      background: var(--cream);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--charcoal);
+      transition: background 0.2s;
     }
 
-    .modal-title{
-      color:var(--ink);
-      font-weight:900;
-      font-size:1.55rem;
-      margin-bottom:8px;
+    .modal-close:hover { background: var(--stone); }
+
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 20px;
     }
 
-    .modal-text{
-      color:var(--muted);
-      font-size:.97rem;
-      line-height:1.95;
-      font-weight:700;
-      margin-bottom:18px;
+    .modal-body p {
+      font-size: 0.87rem;
+      color: var(--warm-gray);
+      line-height: 1.85;
+      margin-bottom: 14px;
     }
 
-    .modal-close{
-      width:100%;
-      min-height:54px;
-      border-radius:16px;
-      font-size:1rem;
+    /* ============================================================
+       RESPONSIVE — Mobile & Tablet
+    ============================================================ */
+    @media (max-width: 900px) {
+      header { padding: 14px 20px; }
+
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 100px 20px 60px;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero-text { order: 1; }
+      .hero-image-wrap { order: 2; }
+      .hero-pills { justify-content: center; }
+
+      #product-img, .product-placeholder { width: 280px; }
+      .product-glow { width: 260px; height: 260px; }
+
+      .features-grid { grid-template-columns: 1fr 1fr; }
+
+      .how-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .order-layout { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    /* =========================================================
-       REVEAL
-    ========================================================= */
-    .reveal{
-      opacity:0;
-      transform:translateY(24px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-    .reveal.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-    .d1{ transition-delay:.08s; }
-    .d2{ transition-delay:.16s; }
-    .d3{ transition-delay:.24s; }
-    .d4{ transition-delay:.32s; }
+    @media (max-width: 600px) {
+      section { padding: 70px 20px; }
 
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-    @media (max-width: 1080px){
-      .hero-grid,
-      .order-shell,
-      .how-grid{
-        grid-template-columns:1fr;
-      }
+      .features-grid { grid-template-columns: 1fr; }
 
-      .hero-content{
-        align-items:center;
-        text-align:center;
-      }
+      .header-badge { display: none; }
 
-      .hero-h1,
-      .hero-sub{
-        max-width:none;
-      }
+      .order-form-box { padding: 28px 20px; }
 
-      .price-panel{
-        width:100%;
-      }
-
-      .hero-visual{
-        min-height:auto;
-        padding-top:12px;
-      }
-
-      .product-stage{
-        width:min(100%, 420px);
-      }
-
-      .visual-cards{
-        position:relative;
-        display:grid;
-        grid-template-columns:repeat(3, 1fr);
-        gap:12px;
-        margin-top:16px;
-      }
-
-      .float-card{
-        position:static;
-        max-width:none;
-      }
+      .offer-cta { padding: 18px 36px; font-size: 1rem; }
     }
 
-    @media (max-width: 860px){
-      .features-grid,
-      .trust-strip,
-      .stats-grid{
-        grid-template-columns:1fr;
-      }
-
-      .stat + .stat{
-        border-right:none;
-        border-top:1px solid var(--line);
-      }
-
-      .section{
-        padding:58px 0;
-      }
-
-      .hero{
-        padding:26px 0 16px;
-      }
-
-      .topbar-inner{
-        min-height:auto;
-        padding:12px 0;
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .nav-actions{
-        width:100%;
-        justify-content:space-between;
-      }
+    /* ============================================================
+       LOADER SPINNER
+    ============================================================ */
+    .spinner {
+      display: inline-block;
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
     }
 
-    @media (max-width: 640px){
-      .container{
-        width:min(100% - 20px, var(--container));
-      }
-
-      .hero-h1{ font-size:clamp(2rem, 10vw, 2.8rem); }
-      .section-title{ font-size:clamp(1.55rem, 7vw, 2rem); }
-      .order-hl{ font-size:clamp(1.45rem, 7vw, 2rem); }
-
-      .hero-actions{
-        width:100%;
-        flex-direction:column;
-      }
-
-      .cta-btn,
-      .ghost-btn{
-        width:100%;
-      }
-
-      .price-panel,
-      .order-copy,
-      .order-card,
-      .how-note,
-      .product-stage{
-        padding:22px 18px;
-      }
-
-      .step{
-        padding:20px 18px 20px 72px;
-      }
-
-      .step-bg-num{
-        font-size:4rem;
-        left:10px;
-      }
-
-      .order-price{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .footer-wrap{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .visual-cards{
-        grid-template-columns:1fr;
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
 
-  <!-- =========================================================
-       STICKY TOP BAR
-  ========================================================== -->
-  <header class="topbar" aria-label="شريط التنقل العلوي">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true"><span>CS</span></div>
-        <div class="brand-copy">
-          <div class="brand-name">COSRX</div>
-          <div class="brand-sub">Advanced Snail 92 All In One Cream</div>
-        </div>
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header id="site-header">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
       </div>
-
-      <div class="nav-actions">
-        <div class="nav-badge" aria-label="منتج أصلي">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M20 7L9 18l-5-5" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          منتج أصلي 100%
-        </div>
-
-        <button class="mini-cta" type="button" onclick="scrollToOrder()">
-          اطلبي الآن
-        </button>
+      <div class="logo-text">
+        <!-- ✏️ غيّر اسم البراند من هنا -->
+        <span class="logo-brand">OBSIDIAN</span>
+        <span class="logo-tagline">عناية كورية احترافية</span>
       </div>
     </div>
+    <div class="header-badge">شحن مجاني داخل الإمارات</div>
   </header>
 
-  <!-- =========================================================
+  <!-- ============================================================
        HERO
-  ========================================================== -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="section-tag reveal d1">COSRX · عناية كورية احترافية</span>
-
-        <h1 class="hero-h1 reveal d2">
-          الترميم الفوري<br />
-          والإشراقة الطبيعية للبشرة.
-        </h1>
-
-        <p class="hero-sub reveal d2">
-          تركيبة طبية متقدمة بتركيز <strong>92%</strong> من موسين الحلزون النقي لتجديد خلايا البشرة بعمق.
-        </p>
-
-        <div class="price-panel reveal d3" aria-label="تفاصيل السعر والعرض">
-          <div class="price-overline">
-            <span class="price-chip">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 13.14 2 8.27l6.91-1.01L12 1z"
-                  stroke="#000" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-              عرض خاص لفترة محدودة
-            </span>
-            <span class="price-chip">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M20 16V8a2 2 0 0 0-1.2-1.83l-6-2.67a2 2 0 0 0-1.6 0l-6 2.67A2 2 0 0 0 4 8v8a2 2 0 0 0 1.2 1.83l6 2.67a2 2 0 0 0 1.6 0l6-2.67A2 2 0 0 0 20 16Z"
-                  stroke="#000" stroke-width="1.8"/>
-                <path d="M4.3 7.3L12 10.75l7.7-3.45M12 10.75V20.6" stroke="#000" stroke-width="1.8"/>
-              </svg>
-              شحن سريع داخل الإمارات
-            </span>
-          </div>
-
-          <p class="price-old">السعر السابق: 79 درهم إماراتي</p>
-          <p class="price-new">السعر الحالي: 49 درهم إماراتي فقط!</p>
-
-          <div class="price-note">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 7h13l4 4v6a2 2 0 0 1-2 2h-1" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 7v10a2 2 0 0 0 2 2h2" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M3 7l2-3h9v3" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="9" cy="18" r="2" stroke="#000" stroke-width="1.8"/>
-              <circle cx="17" cy="18" r="2" stroke="#000" stroke-width="1.8"/>
-            </svg>
-            <span>الشحن مجاني بالكامل والدفع عند الاستلام في الإمارات</span>
-          </div>
-
-          <div class="hero-actions">
-            <button class="cta-btn" type="button" onclick="scrollToOrder()">
-              اطلبي الآن — الدفع عند الاستلام
-            </button>
-            <button class="ghost-btn" type="button" onclick="scrollToFeatures()">
-              اكتشفي المميزات
-            </button>
-          </div>
-        </div>
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow reveal">عناية كورية متقدمة</div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        <em>الترميم الفوري</em><br />
+        والإشراقة الطبيعية للبشرة.
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        تركيبة طبية متقدمة بتركيز <strong>92%</strong> من موسين الحلزون النقي —
+        لبشرة أكثر نعومة وإشراقاً من أول استخدام.
+      </p>
+      <div class="hero-pills reveal reveal-delay-3">
+        <span class="pill">🐌 92% موسين نقي</span>
+        <span class="pill">🌿 خالٍ من البارابين</span>
+        <span class="pill">✅ مختبر طبياً</span>
+        <span class="pill">🐇 Cruelty-Free</span>
       </div>
-
-      <div class="hero-visual reveal d4" aria-label="صورة المنتج">
-        <div class="orb" aria-hidden="true"></div>
-
-        <div class="product-stage">
-          <img
-            src="/images/cosrx-snail-cream.png"
-            alt="COSRX Advanced Snail 92 All In One Cream"
-            onerror="this.style.display='none';document.getElementById('fallback-art').style.display='flex';"
-          />
-          <div class="img-placeholder" id="fallback-art">🐌</div>
-        </div>
-
-        <div class="visual-cards" aria-hidden="true">
-          <div class="float-card card-a">
-            <strong>92% موسين الحلزون</strong>
-            <span>ترميم عميق وملمس أكثر نعومة ومرونة.</span>
-          </div>
-          <div class="float-card card-b">
-            <strong>قوام خفيف</strong>
-            <span>سريع الامتصاص ومريح حتى للبشرة الحساسة.</span>
-          </div>
-          <div class="float-card card-c">
-            <strong>Glow صحي</strong>
-            <span>ترطيب يومي يمنح البشرة مظهراً نضراً ومشرقاً.</span>
-          </div>
-        </div>
-      </div>
+      <a href="#order" class="hero-cta reveal reveal-delay-4">
+        اطلبي الآن بسعر العرض
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
 
-    <div class="container trust-strip">
-      <div class="trust-item reveal d1">
-        <div class="trust-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" stroke="#000" stroke-width="1.8"/>
-            <path d="M9 12l2 2 4-4" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <strong>موثوق وآمن</strong>
-          <span>واجهة نظيفة وتجربة شراء واضحة تعزز الثقة من أول نظرة.</span>
-        </div>
-      </div>
-
-      <div class="trust-item reveal d2">
-        <div class="trust-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M4 14l4-4 4 4 8-8" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20 10V4h-6" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <strong>عرض تحفيزي قوي</strong>
-          <span>سعر واضح، خصم مباشر، وشحن مجاني بالكامل داخل الإمارات.</span>
-        </div>
-      </div>
-
-      <div class="trust-item reveal d3">
-        <div class="trust-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12h14" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M12 5v14" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div>
-          <strong>طلب سريع</strong>
-          <span>نموذج مختصر ومباشر لرفع التحويل وتقليل التردد قبل الإرسال.</span>
-        </div>
+    <div class="hero-image-wrap">
+      <div class="product-glow"></div>
+      <!--
+        ✏️ ضع صورة المنتج هنا:
+           - احفظ الصورة باسم "product.png" (PNG شفاف بدون خلفية) داخل مجلد "images/"
+           - ستتحرك الصورة يميناً ويساراً أثناء التمرير تلقائياً
+           - إذا لم تجد المجلد، أنشئ مجلداً اسمه "images" بجانب ملف index.html
+      -->
+      <img
+        id="product-img"
+        src="images/cosrx-snail-creame.png"
+        alt="كريم موسين الحلزون 92% - OBSIDIAN"
+        onerror="this.style.display='none'; document.getElementById('product-placeholder').style.display='flex';"
+      />
+      <!-- Placeholder يظهر فقط إذا لم تُوجد الصورة -->
+      <div class="product-placeholder" id="product-placeholder" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="3" width="18" height="18" rx="4"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="m21 15-5-5L5 21"/>
+        </svg>
+        <span>ضع صورة المنتج هنا<br/><small style="font-weight:400">images/product.png</small></span>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
+  <!-- ============================================================
        FEATURES
-  ========================================================== -->
-  <section class="section soft" id="features-section">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag reveal">لماذا تختارين هذا الكريم؟</span>
-        <h2 class="section-title reveal d1">مميزات وفوائد الكريم</h2>
+  ============================================================ -->
+  <section id="features">
+    <div class="section-inner">
+      <div class="features-header">
+        <span class="section-label reveal">لماذا موسين الحلزون؟</span>
+        <h2 class="section-title reveal reveal-delay-1">ستة أسباب تجعله<br />المنتج المفضل لديك</h2>
+        <p class="section-desc reveal reveal-delay-2">تركيبة علمية مدروسة تجمع أقوى مكونات العناية الكورية في منتج واحد</p>
       </div>
 
       <div class="features-grid">
-        <article class="feature-card reveal d1">
-          <div class="feature-icon">🐌</div>
-          <h3>موسين الحلزون 92%</h3>
-          <p>يصلح البشرة المتضررة، يخفف الخطوط الرفيعة، يوحّد اللون، ويحفّز الكولاجين لمرونة أعلى.</p>
-        </article>
-
-        <article class="feature-card reveal d2">
-          <div class="feature-icon">💧</div>
-          <h3>ترطيب عميق بدون دهن</h3>
-          <p>قوام خفيف وسهل الامتصاص، يعطي ترطيب يدوم طول اليوم بدون ثِقل أو لمعان.</p>
-        </article>
-
-        <article class="feature-card reveal d3">
-          <div class="feature-icon">🌿</div>
-          <h3>يهدّي البشرة الحساسة</h3>
-          <p>مثالي للالتهاب والاحمرار والجفاف—يريّح البشرة بسرعة ويتركها ناعمة ومريحة.</p>
-        </article>
-
-        <article class="feature-card reveal d1">
-          <div class="feature-icon">🧬</div>
-          <h3>تجديد خلايا البشرة</h3>
-          <p>يحسّن الملمس، يقلل التصبغات والبقع مع الاستخدام المنتظم، ويعطي مظهراً مشرقاً.</p>
-        </article>
-
-        <article class="feature-card reveal d2">
-          <div class="feature-icon">🪶</div>
-          <h3>قوام حريري سريع الامتصاص</h3>
-          <p>خفيف على البشرة ويترك إحساساً ناعماً ومنتعشاً.</p>
-        </article>
-
-        <article class="feature-card reveal d3">
-          <div class="feature-icon">🌍</div>
-          <h3>صديق للحيوانات</h3>
-          <p>موسين الحلزون يُجمع بدون أذى—منتج آمن وأخلاقي 100%.</p>
-        </article>
+        <!-- Feature 1 -->
+        <div class="feature-card reveal">
+          <span class="feature-icon">🐌</span>
+          <h3 class="feature-title">موسين الحلزون الطبيعي 92%</h3>
+          <p class="feature-desc">يساعد على إصلاح البشرة التالفة، تحفيز إنتاج الكولاجين، وتقليل آثار الشمس والتمدد بشكل ملحوظ.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">💧</span>
+          <h3 class="feature-title">ترطيب عميق بدون دهن</h3>
+          <p class="feature-desc">قوامه الجل الخفيف يتغلغل في طبقات البشرة فوراً دون أن يترك أي أثر دهني أو لزج — مثالي للاستخدام اليومي.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <span class="feature-icon">🌿</span>
+          <h3 class="feature-title">يهدّي البشرة الحساسة</h3>
+          <p class="feature-desc">مثالي للبشرة التي تتعرض للتهيج والاحمرار. مكوناته المهدئة تقلل الالتهابات وتعزز حاجز الحماية الطبيعي.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <span class="feature-icon">🧬</span>
+          <h3 class="feature-title">تجديد خلايا البشرة</h3>
+          <p class="feature-desc">يحسّن ملمس البشرة بشكل ملحوظ، يقلل التصبغات والبقع الداكنة، ويمنح إشراقة متجانسة مع الاستخدام المستمر.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <span class="feature-icon">🪶</span>
+          <h3 class="feature-title">قوام حريري سريع الامتصاص</h3>
+          <p class="feature-desc">ينساب على البشرة كالحرير ويُمتص في ثوانٍ، دون الحاجة للانتظار — مثالي لمن تبحث عن روتين سريع وفعّال.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <span class="feature-icon">🌍</span>
+          <h3 class="feature-title">صديق للحيوانات والبيئة</h3>
+          <p class="feature-desc">لم يُختبر على الحيوانات، خالٍ من البارابين والمواد الضارة، وتغليفه قابل لإعادة التدوير.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
+  <!-- ============================================================
        HOW TO USE
-  ========================================================== -->
-  <section class="section white">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag reveal">في ثلاث خطوات بسيطة</span>
-        <h2 class="section-title reveal d1">طريقة الاستخدام</h2>
-      </div>
+  ============================================================ -->
+  <section id="how-to-use">
+    <div class="section-inner">
+      <span class="section-label reveal">طريقة الاستخدام</span>
+      <h2 class="section-title reveal reveal-delay-1">ثلاث خطوات فقط<br />لنتائج مذهلة</h2>
 
       <div class="how-grid">
-        <div class="steps">
-          <article class="step reveal d1">
-            <span class="step-bg-num">01</span>
-            <div class="step-badge">١</div>
-            <p class="step-text">استخدميه بعد التونر أو السيروم على بشرة نظيفة.</p>
-          </article>
+        <div class="steps-list">
+          <!-- Step 1 -->
+          <div class="step reveal">
+            <div class="step-num">١</div>
+            <div class="step-body">
+              <div class="step-title">بعد التونر أو السيروم</div>
+              <div class="step-desc">استخدميه على بشرة نظيفة، بعد التونر أو السيروم مباشرةً، قبل الكريم النهائي.</div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="step reveal reveal-delay-1">
+            <div class="step-num">٢</div>
+            <div class="step-body">
+              <div class="step-title">كمية صغيرة تكفي</div>
+              <div class="step-desc">خذي كمية بحجم حبة البازلاء ووزعيها بلطف على الوجه والرقبة بحركات دائرية.</div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="step reveal reveal-delay-2">
+            <div class="step-num">٣</div>
+            <div class="step-body">
+              <div class="step-title">ربّتي حتى الامتصاص</div>
+              <div class="step-desc">ربّتي بلطف حتى يمتصه الجلد بالكامل — ستشعرين بالفرق فوراً.</div>
+            </div>
+          </div>
 
-          <article class="step reveal d2">
-            <span class="step-bg-num">02</span>
-            <div class="step-badge">٢</div>
-            <p class="step-text">خذي كمية مناسبة ووزعيها على الوجه والرقبة.</p>
-          </article>
-
-          <article class="step reveal d3">
-            <span class="step-bg-num">03</span>
-            <div class="step-badge">٣</div>
-            <p class="step-text">ربّتي بلطف لين تمتصه البشرة بالكامل.</p>
-          </article>
+          <div class="how-note reveal reveal-delay-3">
+            ☀️ مناسب للاستخدام صباحاً ومساءً
+          </div>
         </div>
 
-        <aside class="how-note reveal d4">
-          <div class="pill">📌 مناسب للاستخدام صباح ومساء</div>
-          <h3>روتين بسيط، نتيجة أنعم وإشراقة أوضح.</h3>
-          
-  </section>
-
-  <!-- =========================================================
-       STATS
-  ========================================================== -->
-  <section class="section soft-2">
-    <div class="container">
-      <div class="stats-wrap reveal">
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-num">92%</div>
-            <div class="stat-label">موسين طبيعي نقي</div>
+        <div class="how-visual reveal reveal-delay-2">
+          <div class="how-visual-card">
+            <div class="how-visual-icon">🧴</div>
+            <div>
+              <div class="how-visual-label">قبل الكريم المرطب</div>
+              <div class="how-visual-sub">ضعيه كطبقة علاجية ثم أتبعيه بالكريم</div>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-num">★ 4.9</div>
-            <div class="stat-label">تقييم العملاء</div>
+          <div class="how-visual-card">
+            <div class="how-visual-icon">🌙</div>
+            <div>
+              <div class="how-visual-label">الاستخدام المسائي الأمثل</div>
+              <div class="how-visual-sub">أثناء النوم، تعمل مكوناته على إصلاح البشرة</div>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">أصلي مضمون</div>
+          <div class="how-visual-card">
+            <div class="how-visual-icon">📅</div>
+            <div>
+              <div class="how-visual-label">نتائج خلال 4 أسابيع</div>
+              <div class="how-visual-sub">تحسن واضح في الملمس والإشراقة مع الاستخدام اليومي</div>
+            </div>
+          </div>
+          <div class="how-visual-card">
+            <div class="how-visual-icon">💆</div>
+            <div>
+              <div class="how-visual-label">مناسب لجميع أنواع البشرة</div>
+              <div class="how-visual-sub">جافة، دهنية، مختلطة، وحساسة</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       ORDER
-  ========================================================== -->
-  <section class="section soft" id="order-section">
-    <div class="container order-shell">
-      <div class="order-copy reveal d1">
-        <span class="section-tag">طلب سريع وآمن</span>
-        <h2 class="order-hl">✨ كريم واحد… يعالج، يرطّب، يجدّد، ويخلي بشرتج نضرة كل يوم! ✨</h2>
-        <p>
-        يرجى ملأ استمارة الطلب، لطلب المنتج و الدفع عند استلام المنتج.
-        </p>
+  <!-- ============================================================
+       OFFER / PRICE
+  ============================================================ -->
+  <section id="offer">
+    <div class="section-inner offer-inner" style="text-align:center;">
+      <span class="offer-label reveal">عرض محدود المدة</span>
+      <h2 class="offer-title reveal reveal-delay-1">
+        احصلي على كريم الحلزون الأصيل<br />بسعر استثنائي لا يُعوَّض
+      </h2>
 
-        <div class="bullet-list">
-          <div class="bullet">✔ السعر السابق: 79 درهم إماراتي</div>
-          <div class="bullet">✔ السعر الحالي: 49 درهم إماراتي فقط!</div>
-          <div class="bullet">✔ الشحن مجاني بالكامل والدفع عند الاستلام في الإمارات</div>
+      <div class="price-block reveal reveal-delay-2">
+        <!-- ✏️ تعديل السعر القديم هنا -->
+        <div class="price-old">79 درهم إماراتي</div>
+        <div>
+          <!-- ✏️ تعديل السعر الحالي هنا + في CONFIG.PRODUCT_PRICE بالجافاسكريبت -->
+          <span class="price-currency">AED</span>
+          <span class="price-current">49</span>
         </div>
       </div>
 
-      <div class="order-card reveal d2">
-        <div class="order-price" aria-label="ملخص السعر">
-          <strong>49 درهم إماراتي</strong>
-          <span>شحن مجاني · دفع عند الاستلام · الإمارات</span>
+      <div class="price-badges reveal reveal-delay-3">
+        <span class="price-badge">🚚 شحن مجاني بالكامل</span>
+        <span class="price-badge">💳 الدفع عند الاستلام</span>
+        <span class="price-badge">🔒 100% أصلي ومضمون</span>
+        <span class="price-badge">📦 التوصيل خلال 24–48 ساعة</span>
+      </div>
+
+      <a href="#order" class="offer-cta reveal reveal-delay-4">
+        اطلبي الآن — خذي عرضك قبل النفاد
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ORDER FORM
+  ============================================================ -->
+  <section id="order">
+    <div class="section-inner">
+      <span class="section-label reveal">أكملي طلبك الآن</span>
+      <h2 class="section-title reveal reveal-delay-1">خطوة واحدة فقط<br />وسنتولى الباقي</h2>
+
+      <div class="order-layout">
+        <div class="order-info reveal reveal-delay-1">
+          <p class="section-desc">
+            أكملي بياناتك وسيتواصل معكِ فريقنا خلال 24 ساعة لتأكيد الطلب وترتيب التوصيل المجاني إلى بابك.
+          </p>
+          <div class="trust-items">
+            <div class="trust-item">
+              <div class="trust-icon">🔐</div>
+              بياناتك محمية وآمنة تماماً
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">☎️</div>
+              سنتصل بك خلال 24 ساعة لتأكيد الطلب
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">📦</div>
+              توصيل مجاني لجميع إمارات الدولة
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">💳</div>
+              الدفع عند الاستلام — لا دفع مسبق
+            </div>
+          </div>
         </div>
 
-        <!-- Production-ready COD form -->
-        <form id="order-form" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <label for="f-name">الاسم الكامل</label>
-              <input type="text" id="f-name" name="fullName" placeholder="مثال: فاطمة الزهراء" autocomplete="name" />
-              <div class="hint" id="name-error"></div>
+        <div class="order-form-box reveal reveal-delay-2">
+          <div class="form-title">🛒 تأكيد الطلب</div>
+
+          <!--
+            ✏️ النموذج: البيانات تُرسل عبر fetch إلى CONFIG.API_ENDPOINT
+               لا تضف action أو method هنا — كل شيء يتم في JavaScript أسفله
+          -->
+          <form id="order-form" novalidate>
+            <div class="form-group">
+              <label for="full-name">الاسم الكامل <span>*</span></label>
+              <input
+                type="text"
+                id="full-name"
+                name="full_name"
+                class="form-control"
+                placeholder="مثال: نورة محمد الراشد"
+                required
+              />
             </div>
 
-            <div class="field">
-              <label for="f-phone">رقم الهاتف</label>
+            <div class="form-group">
+              <label for="phone">رقم الهاتف <span>*</span></label>
               <input
                 type="tel"
-                id="f-phone"
+                id="phone"
                 name="phone"
-                placeholder="05xxxxxxxx"
-                autocomplete="tel"
-                inputmode="tel"
-                style="direction:ltr;text-align:right;"
+                class="form-control"
+                placeholder="05XXXXXXXX أو 971XXXXXXXX"
+                required
               />
-              <div class="hint" id="phone-error"></div>
             </div>
 
-            <div class="field">
-              <label for="f-city">المدينة / الإمارة</label>
-              <select id="f-city" name="city">
-                <option value="" selected disabled>اختاري الإمارة</option>
+            <div class="form-group">
+              <label for="city">الإمارة / المدينة <span>*</span></label>
+              <select id="city" name="city" class="form-control" required>
+                <option value="" disabled selected>اختاري إمارتك</option>
                 <option value="أبوظبي">أبوظبي</option>
                 <option value="دبي">دبي</option>
                 <option value="الشارقة">الشارقة</option>
@@ -1474,306 +1236,276 @@
                 <option value="أم القيوين">أم القيوين</option>
                 <option value="رأس الخيمة">رأس الخيمة</option>
                 <option value="الفجيرة">الفجيرة</option>
+                <option value="العين">العين</option>
               </select>
-              <div class="hint" id="city-error"></div>
             </div>
 
-            <button class="submit-btn" id="submit-btn" type="submit">
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
               تأكيد الطلب الآن
             </button>
-          </div>
+          </form>
 
-          <div class="status-box" id="form-status" aria-live="polite"></div>
-
-          <div class="trust-row" aria-label="شارات الثقة">
-            <span class="badge">✔ منتج أصلي 100%</span>
-            <span class="badge">🚚 شحن سريع ومجاني</span>
-            <span class="badge">💯 ضمان الرضا</span>
-          </div>
-        </form>
+          <div class="form-msg" id="form-msg"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
+  <!-- ============================================================
        FOOTER
-  ========================================================== -->
+  ============================================================ -->
   <footer>
-    <div class="container footer-wrap">
-      <div class="foot-brand">COSRX</div>
-      <div class="foot-copy">© 2026 COSRX. جميع الحقوق محفوظة.</div>
+    <!-- ✏️ غيّر اسم الشركة في الفوتر هنا -->
+    <div class="footer-logo">OBSIDIAN</div>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('privacy'); return false;">سياسة الخصوصية</a>
+      <a href="#" onclick="openModal('terms'); return false;">الشروط والأحكام</a>
     </div>
+    <!-- ✏️ غيّر السنة أو اسم الشركة هنا -->
+    <div class="footer-copy">OBSIDIAN SKINCARE. ALL RIGHTS 2026 © RESERVED</div>
   </footer>
 
-  <!-- =========================================================
-       SUCCESS MODAL
-  ========================================================== -->
-  <div class="modal-overlay" id="modal" onclick="closeModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="modal-icon">🎉</div>
-      <div class="modal-title">تم استلام طلبك!</div>
-      <div class="modal-text">
-        سيتواصل معك فريقنا قريباً لتأكيد الطلب وتحديد موعد التوصيل.
+  <!-- ============================================================
+       MODALS
+  ============================================================ -->
+  <div class="modal-overlay" id="modal-privacy">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+      <h3 class="modal-title">سياسة الخصوصية</h3>
+      <div class="modal-body">
+        <p>نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. يتم استخدام المعلومات التي تقدمها حصراً لمعالجة طلبك والتواصل معك بشأنه.</p>
+        <p>لا نشارك بياناتك الشخصية مع أي طرف ثالث دون موافقتك الصريحة، باستثناء شركاء التوصيل المخوّلين لإتمام الطلب.</p>
+        <p>يحق لك في أي وقت طلب الاطلاع على بياناتك المحفوظة، تعديلها، أو حذفها عبر التواصل معنا مباشرةً.</p>
+        <p>نستخدم بروتوكولات تشفير قياسية لحماية بياناتك أثناء الإرسال والتخزين.</p>
       </div>
-      <button class="modal-close" type="button" onclick="closeModal()">حسناً، شكراً!</button>
     </div>
   </div>
 
+  <div class="modal-overlay" id="modal-terms">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('terms')">✕</button>
+      <h3 class="modal-title">الشروط والأحكام</h3>
+      <div class="modal-body">
+        <p>باستخدامك لهذا الموقع وتقديم طلبك، فإنك توافق على الشروط والأحكام التالية.</p>
+        <p>يتم التحقق من الطلبات عبر الهاتف قبل الشحن. نحتفظ بالحق في رفض أي طلب لأسباب تتعلق بتوفر المخزون أو التحقق من صحة البيانات.</p>
+        <p>سياسة الإرجاع: يحق لك إرجاع المنتج خلال 7 أيام من الاستلام في حال كان معيباً أو غير مطابق للوصف، مع الاحتفاظ بالتغليف الأصلي.</p>
+        <p>الأسعار قابلة للتغيير دون إشعار مسبق. يُعتمد السعر المعروض وقت تأكيد الطلب هاتفياً.</p>
+        <p>للتواصل أو الشكاوى، يرجى التواصل عبر قنوات الدعم المعتمدة.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
   <script>
-    /* =========================================================
-       TAJIR / TAAGER COD CONFIG
-       Edit only these two values when deploying.
-    ========================================================== */
-    const TAJER_API_KEY = "YOUR_API_KEY_HERE";
-    const PRODUCT_ID = "YOUR_PRODUCT_ID_HERE";
+    /* ============================================================
+       ✏️ CONFIG — الإعدادات الرئيسية
+       قم بتعديل هذه القيم قبل رفع الصفحة
+    ============================================================ */
+    const CONFIG = {
+      // ✏️ ضع هنا رابط API الخاص بمنصة التسويق بالعمولة
+      API_ENDPOINT: "https://your-api-endpoint.com/submit",
 
-    /* =========================================================
-       Internal API constants
-       Merchant API endpoint derived for Taager order creation.
-    ========================================================== */
-    const TAJER_API_URL = "https://merchant.api.taager.com/api/order/makeOrderByCart";
-    const PRODUCT_PRICE_AED = 49;
+      // ✏️ معرف المنتج كما هو محدد في منصة الأفلييت
+      PRODUCT_ID: "OBSIDIAN_SNAIL_92",
 
-    /* =========================================================
-       Helpers
-    ========================================================== */
-    const form = document.getElementById("order-form");
-    const submitBtn = document.getElementById("submit-btn");
-    const statusBox = document.getElementById("form-status");
+      // ✏️ معرف الأفلييت الخاص بك
+      AFFILIATE_ID: "YOUR_AFFILIATE_ID",
 
-    const fields = {
-      name: document.getElementById("f-name"),
-      phone: document.getElementById("f-phone"),
-      city: document.getElementById("f-city")
+      // ✏️ السعر النهائي الذي سيُرسل للمنصة (يجب أن يطابق السعر المعروض للمستخدم)
+      PRODUCT_PRICE: 49
     };
 
-    const errors = {
-      name: document.getElementById("name-error"),
-      phone: document.getElementById("phone-error"),
-      city: document.getElementById("city-error")
-    };
+    /* ============================================================
+       HEADER SCROLL SHADOW
+    ============================================================ */
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
 
-    function scrollToOrder() {
-      document.getElementById("order-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    /* ============================================================
+       SCROLL REVEAL — Intersection Observer
+    ============================================================ */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ============================================================
+       PRODUCT IMAGE PARALLAX SCROLL
+       ✏️ لتعديل سرعة الحركة: غيّر قيمة SCROLL_SPEED
+          - 0.05 = حركة بطيئة جداً
+          - 0.12 = حركة متوسطة (الافتراضي)
+          - 0.25 = حركة سريعة
+       ✏️ لتعديل المدى الأقصى للحركة: غيّر MAX_OFFSET (بالـ px)
+    ============================================================ */
+    const SCROLL_SPEED = 0.12;  // ← عدّل هذا للتحكم في سرعة الحركة
+    const MAX_OFFSET   = 60;    // ← الحد الأقصى للتحريك بالبيكسل
+
+    const productImg = document.getElementById('product-img');
+
+    function updateProductParallax() {
+      if (!productImg || productImg.style.display === 'none') return;
+
+      const hero = document.getElementById('hero');
+      const heroRect = hero.getBoundingClientRect();
+      const heroHeight = hero.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // نسبة التمرير داخل قسم الهيرو: من 0 إلى 1
+      const progress = 1 - (heroRect.bottom / (heroHeight + windowHeight));
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // تحويل النسبة إلى حركة من اليمين (+MAX) إلى اليسار (-MAX)
+      const offset = MAX_OFFSET - (clampedProgress * MAX_OFFSET * 2 * (1 / SCROLL_SPEED));
+      const clampedOffset = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offset));
+
+      productImg.style.transform = `translateX(${clampedOffset}px)`;
     }
 
-    function scrollToFeatures() {
-      document.getElementById("features-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    window.addEventListener('scroll', updateProductParallax, { passive: true });
+    updateProductParallax(); // تشغيل عند التحميل
+
+    /* ============================================================
+       MODALS
+    ============================================================ */
+    function openModal(type) {
+      document.getElementById('modal-' + type).classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
 
-    function closeModal() {
-      document.getElementById("modal").classList.remove("open");
+    function closeModal(type) {
+      document.getElementById('modal-' + type).classList.remove('open');
+      document.body.style.overflow = '';
     }
 
-    function openModal() {
-      document.getElementById("modal").classList.add("open");
+    // إغلاق عند الضغط خارج المودال
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === this) {
+          this.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    /* ============================================================
+       FORM VALIDATION & SUBMISSION
+    ============================================================ */
+    const orderForm = document.getElementById('order-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formMsg   = document.getElementById('form-msg');
+
+    function showMsg(type, text) {
+      formMsg.className = 'form-msg ' + type;
+      formMsg.textContent = text;
     }
 
-    function showStatus(message, type) {
-      statusBox.className = "status-box show " + type;
-      statusBox.textContent = message;
+    function setLoading(isLoading) {
+      if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span> جاري إرسال الطلب...';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          تأكيد الطلب الآن`;
+      }
     }
 
-    function clearStatus() {
-      statusBox.className = "status-box";
-      statusBox.textContent = "";
+    function validatePhone(phone) {
+      // يقبل أرقام سعودية (+966 / 05X) وإماراتية (+971 / 05X)
+      const cleaned = phone.replace(/\s/g, '');
+      return /^(\+?971|00971|0)?5\d{8}$|^(\+?966|00966|0)?5\d{8}$/.test(cleaned);
     }
 
-    function setError(fieldKey, message) {
-      fields[fieldKey].classList.add("error");
-      errors[fieldKey].textContent = message;
-    }
+    orderForm.addEventListener('submit', async function (e) {
+      e.preventDefault(); // منع الإرسال التقليدي
 
-    function clearError(fieldKey) {
-      fields[fieldKey].classList.remove("error");
-      errors[fieldKey].textContent = "";
-    }
+      // — جمع القيم —
+      const fullName = document.getElementById('full-name').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
+      const city     = document.getElementById('city').value;
 
-    function clearAllErrors() {
-      clearError("name");
-      clearError("phone");
-      clearError("city");
-    }
+      // — التحقق —
+      let hasError = false;
 
-    function normalizePhone(value) {
-      const raw = String(value || "").replace(/[^\d+]/g, "").trim();
+      [document.getElementById('full-name'),
+       document.getElementById('phone'),
+       document.getElementById('city')]
+        .forEach(el => el.classList.remove('error'));
 
-      if (!raw) return "";
-
-      if (raw.startsWith("+971")) return raw;
-      if (raw.startsWith("971")) return "+" + raw;
-      if (raw.startsWith("00971")) return "+" + raw.replace(/^00/, "");
-      if (raw.startsWith("05")) return "+971" + raw.substring(1);
-      if (raw.startsWith("5")) return "+971" + raw;
-
-      return raw;
-    }
-
-    function isValidUAEPhone(value) {
-      const normalized = normalizePhone(value);
-      return /^(?:\+971|971)(5[024568]\d{7})$/.test(normalized);
-    }
-
-    function validateForm() {
-      clearAllErrors();
-      clearStatus();
-
-      const name = fields.name.value.trim();
-      const phone = fields.phone.value.trim();
-      const city = fields.city.value;
-
-      let valid = true;
-
-      if (!name || name.length < 3) {
-        setError("name", "يرجى إدخال الاسم الكامل بشكل صحيح.");
-        valid = false;
+      if (!fullName || fullName.length < 3) {
+        document.getElementById('full-name').classList.add('error');
+        hasError = true;
       }
 
-      if (!phone) {
-        setError("phone", "يرجى إدخال رقم الهاتف.");
-        valid = false;
-      } else if (!isValidUAEPhone(phone)) {
-        setError("phone", "يرجى إدخال رقم هاتف إماراتي صحيح.");
-        valid = false;
+      if (!phone || !validatePhone(phone)) {
+        document.getElementById('phone').classList.add('error');
+        hasError = true;
       }
 
       if (!city) {
-        setError("city", "يرجى اختيار المدينة / الإمارة.");
-        valid = false;
+        document.getElementById('city').classList.add('error');
+        hasError = true;
       }
 
-      return valid;
-    }
+      if (hasError) {
+        showMsg('error', 'يرجى التحقق من البيانات المُدخلة والمحاولة مجدداً.');
+        return;
+      }
 
-    function buildOrderPayload() {
-      const fullName = fields.name.value.trim();
-      const phone = normalizePhone(fields.phone.value.trim());
-      const city = fields.city.value;
-
-      /* 
-        Standard COD-oriented payload:
-        - client details
-        - product reference
-        - quantity
-        - campaign price
-        - page source metadata
-      */
-      return {
-        receiverName: fullName,
-        phoneNumber: phone,
-        phoneNumber2: "",
-        province: city,
-        streetName: city,
-        notes: "طلب من صفحة COSRX Advanced Snail 92 All In One Cream",
-        cashOnDelivery: PRODUCT_PRICE_AED,
-        orderProfit: 0,
-        productQuantities: [1],
-        products: [
-          {
-            productId: PRODUCT_ID,
-            quantity: 1
-          }
-        ],
-        orderLines: [
-          {
-            productId: PRODUCT_ID,
-            quantity: 1
-          }
-        ],
-        country: "AE",
-        currency: "AED",
-        paymentMethod: "cod",
-        orderSource: {
-          pageName: "COSRX Landing Page",
-          pageUrl: window.location.href
-        }
+      // — الإرسال —
+      const payload = {
+        full_name:    fullName,
+        phone:        phone,
+        city:         city,
+        product_id:   CONFIG.PRODUCT_ID,
+        affiliate_id: CONFIG.AFFILIATE_ID,
+        price:        CONFIG.PRODUCT_PRICE,
+        quantity:     1
       };
-    }
 
-    async function submitOrder(event) {
-      if (event) event.preventDefault();
-
-      if (!validateForm()) return;
-
-      if (!TAJER_API_KEY || TAJER_API_KEY === "YOUR_API_KEY_HERE") {
-        showStatus("يرجى إضافة مفتاح API الخاص بمنصة تاجر داخل الكود قبل الإطلاق.", "error");
-        return;
-      }
-
-      if (!PRODUCT_ID || PRODUCT_ID === "YOUR_PRODUCT_ID_HERE") {
-        showStatus("يرجى إضافة PRODUCT_ID الصحيح داخل الكود قبل الإطلاق.", "error");
-        return;
-      }
-
-      const payload = buildOrderPayload();
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "جارٍ إرسال الطلب...";
+      setLoading(true);
+      showMsg('loading', 'جاري تأكيد الطلب...');
 
       try {
-        const response = await fetch(TAJER_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + TAJER_API_KEY
-          },
-          body: JSON.stringify(payload)
+        const response = await fetch(CONFIG.API_ENDPOINT, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
         });
 
-        let responseData = null;
-        try {
-          responseData = await response.json();
-        } catch (_) {
-          responseData = null;
+        if (response.ok) {
+          // ✅ نجاح
+          showMsg('success', '✅ تم استلام طلبك بنجاح! سنتصل بك خلال 24 ساعة لتأكيد الطلب وترتيب التوصيل المجاني.');
+          orderForm.reset();
+          orderForm.style.display = 'none';
+        } else {
+          throw new Error('Server error: ' + response.status);
         }
-
-        /* Show success modal only if server returns HTTP 200 OK */
-        if (response.status === 200) {
-          showStatus("تم إرسال الطلب بنجاح.", "success");
-          form.reset();
-          openModal();
-          return;
-        }
-
-        const serverMessage =
-          responseData?.message ||
-          responseData?.error ||
-          responseData?.errors?.[0]?.message ||
-          "تعذر إرسال الطلب حالياً. يرجى المحاولة مرة أخرى.";
-
-        showStatus(serverMessage, "error");
-      } catch (error) {
-        showStatus("حدث خطأ في الاتصال بالخادم. يرجى التحقق من الإنترنت والمحاولة مرة أخرى.", "error");
+      } catch (err) {
+        console.error('Order submission error:', err);
+        showMsg('error', '❌ حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو الاتصال بالدعم مباشرةً.');
       } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "تأكيد الطلب الآن";
+        setLoading(false);
       }
-    }
-
-    /* =========================================================
-       Reveal on scroll
-    ========================================================== */
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    /* =========================================================
-       UX bindings
-    ========================================================== */
-    form.addEventListener("submit", submitOrder);
-
-    fields.name.addEventListener("input", () => clearError("name"));
-    fields.phone.addEventListener("input", () => clearError("phone"));
-    fields.city.addEventListener("change", () => clearError("city"));
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeModal();
     });
   </script>
+
 </body>
 </html>
 
