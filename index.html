@@ -222,16 +222,6 @@
 
     .mini-cta:hover{ transform:translateY(-1px); }
     .mini-cta:active{ transform:translateY(0); }
-    .mini-cta.pulse-cta{
-      animation:miniPulse 2.1s ease-in-out infinite;
-      position:relative;
-      isolation:isolate;
-    }
-
-    @keyframes miniPulse{
-      0%,100%{ transform:scale(1); box-shadow:0 10px 25px rgba(0,0,0,.16), 0 0 0 0 rgba(255,255,255,.35); }
-      50%{ transform:scale(1.04); box-shadow:0 14px 30px rgba(0,0,0,.22), 0 0 0 8px rgba(255,255,255,0); }
-    }
 
     /* =========================================================
        HERO
@@ -328,7 +318,7 @@
       display:flex;
       align-items:flex-start;
       gap:10px;
-      color:#4f5560;
+      color:var(--muted);
       font-size:.98rem;
       font-weight:700;
       line-height:1.8;
@@ -856,57 +846,6 @@
       font-weight:800;
     }
 
-    
-    #f-city{
-      color:#8a8f9a;
-    }
-
-    #f-city.has-value{
-      color:#0a0a0a;
-    }
-
-    .qty-wrap{
-      display:grid;
-      gap:10px;
-    }
-
-    .qty-title{
-      color:var(--ink);
-      font-size:.93rem;
-      font-weight:900;
-    }
-
-    .qty-options{
-      display:grid;
-      gap:10px;
-    }
-
-    .qty-option input{
-      position:absolute;
-      opacity:0;
-      pointer-events:none;
-    }
-
-    .qty-card{
-      display:block;
-      background:#f3f4f6;
-      border:2px solid #d2d7df;
-      border-radius:16px;
-      padding:14px 15px;
-      font-weight:900;
-      color:#13161c;
-      cursor:pointer;
-      transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
-      line-height:1.75;
-    }
-
-    .qty-option input:checked + .qty-card{
-      background:#fff;
-      border-color:#0a0a0a;
-      box-shadow:0 10px 22px rgba(0,0,0,.08);
-      transform:translateY(-1px);
-    }
-
     .submit-btn{
       width:100%;
       min-height:60px;
@@ -1226,7 +1165,7 @@
           منتج أصلي 100%
         </div>
 
-        <button class="mini-cta pulse-cta" type="button" onclick="scrollToOrder()">
+        <button class="mini-cta" type="button" onclick="scrollToOrder()">
           اطلبي الآن
         </button>
       </div>
@@ -1502,26 +1441,8 @@
         </div>
 
         <!-- Production-ready COD form -->
-        <form id="checkout-form" novalidate>
+        <form id="order-form" novalidate>
           <div class="form-row">
-            <div class="qty-wrap">
-              <span class="qty-title">إدخال كمية الطلب</span>
-              <div class="qty-options" role="radiogroup" aria-label="اختيار كمية الطلب">
-                <label class="qty-option">
-                  <input type="radio" name="quantity" value="🛒 علبة واحدة - 49 درهم إماراتي" checked />
-                  <span class="qty-card">🛒 علبة واحدة - 49 درهم إماراتي</span>
-                </label>
-                <label class="qty-option">
-                  <input type="radio" name="quantity" value="🔥 علبتين (الأكثر طلباً) - 89 درهم إماراتي + هدية مجانية" />
-                  <span class="qty-card">🔥 علبتين (الأكثر طلباً) - 89 درهم إماراتي + هدية مجانية</span>
-                </label>
-                <label class="qty-option">
-                  <input type="radio" name="quantity" value="💎 3 علب (عرض التوفير) - 119 درهم إماراتي + شحن سريع مجاني" />
-                  <span class="qty-card">💎 3 علب (عرض التوفير) - 119 درهم إماراتي + شحن سريع مجاني</span>
-                </label>
-              </div>
-            </div>
-
             <div class="field">
               <label for="f-name">الاسم الكامل</label>
               <input type="text" id="f-name" name="fullName" placeholder="مثال: فاطمة الزهراء" autocomplete="name" />
@@ -1616,7 +1537,7 @@
     /* =========================================================
        Helpers
     ========================================================== */
-    const form = document.getElementById("checkout-form");
+    const form = document.getElementById("order-form");
     const submitBtn = document.getElementById("submit-btn");
     const statusBox = document.getElementById("form-status");
 
@@ -1626,28 +1547,18 @@
       city: document.getElementById("f-city")
     };
 
-    const quantityOptions = Array.from(document.querySelectorAll('input[name="quantity"]'));
-
     const errors = {
       name: document.getElementById("name-error"),
       phone: document.getElementById("phone-error"),
       city: document.getElementById("city-error")
     };
 
-    function lightScrollTo(targetId) {
-      const target = document.getElementById(targetId);
-      if (!target) return;
-      requestAnimationFrame(() => {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
-
     function scrollToOrder() {
-      lightScrollTo("order-section");
+      document.getElementById("order-section").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function scrollToFeatures() {
-      lightScrollTo("features-section");
+      document.getElementById("features-section").scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function closeModal() {
@@ -1685,21 +1596,22 @@
     }
 
     function normalizePhone(value) {
-      const digits = String(value || "").replace(/\D/g, "");
-      if (!digits) return "";
-      if (digits.startsWith("00971")) return "+" + digits.slice(2);
-      if (digits.startsWith("971")) return "+" + digits;
-      if (digits.startsWith("05")) return "+971" + digits.slice(1);
-      if (digits.startsWith("5")) return "+971" + digits;
-      return digits;
+      const raw = String(value || "").replace(/[^\d+]/g, "").trim();
+
+      if (!raw) return "";
+
+      if (raw.startsWith("+971")) return raw;
+      if (raw.startsWith("971")) return "+" + raw;
+      if (raw.startsWith("00971")) return "+" + raw.replace(/^00/, "");
+      if (raw.startsWith("05")) return "+971" + raw.substring(1);
+      if (raw.startsWith("5")) return "+971" + raw;
+
+      return raw;
     }
 
     function isValidUAEPhone(value) {
-      const digits = String(value || "").replace(/\D/g, "");
-      const localValid = /^0?5\d{8}$/.test(digits);
-      const normalized = normalizePhone(digits);
-      const intlValid = /^\+9715\d{8}$/.test(normalized);
-      return digits.length >= 9 && (localValid || intlValid);
+      const normalized = normalizePhone(value);
+      return /^(?:\+971|971)(5[024568]\d{7})$/.test(normalized);
     }
 
     function validateForm() {
@@ -1737,7 +1649,6 @@
       const fullName = fields.name.value.trim();
       const phone = normalizePhone(fields.phone.value.trim());
       const city = fields.city.value;
-      const selectedQuantity = (document.querySelector('input[name="quantity"]:checked') || {}).value || "🛒 علبة واحدة - 49 درهم إماراتي";
 
       /* 
         Standard COD-oriented payload:
@@ -1753,8 +1664,7 @@
         phoneNumber2: "",
         province: city,
         streetName: city,
-        quantity: selectedQuantity,
-        notes: "طلب من صفحة COSRX Advanced Snail 92 All In One Cream | الكمية: " + selectedQuantity,
+        notes: "طلب من صفحة COSRX Advanced Snail 92 All In One Cream",
         cashOnDelivery: PRODUCT_PRICE_AED,
         orderProfit: 0,
         productQuantities: [1],
@@ -1847,7 +1757,7 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
-    }, { threshold: 0.2, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0.12 });
 
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
@@ -1857,18 +1767,8 @@
     form.addEventListener("submit", submitOrder);
 
     fields.name.addEventListener("input", () => clearError("name"));
-    fields.phone.addEventListener("input", (event) => {
-      event.target.value = event.target.value.replace(/\D/g, "").slice(0, 12);
-      clearError("phone");
-    });
-    fields.city.addEventListener("change", () => {
-      clearError("city");
-      fields.city.classList.toggle("has-value", Boolean(fields.city.value));
-    });
-
-    quantityOptions.forEach((option) => {
-      option.addEventListener("change", clearStatus);
-    });
+    fields.phone.addEventListener("input", () => clearError("phone"));
+    fields.city.addEventListener("change", () => clearError("city"));
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeModal();
@@ -1876,4 +1776,4 @@
   </script>
 </body>
 </html>
-          
+
